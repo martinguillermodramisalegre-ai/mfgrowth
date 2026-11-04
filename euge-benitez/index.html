@@ -1,0 +1,282 @@
+<title>Euge Benitez Coaching</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: una columna cálida, hero tipográfico con la pregunta de sus posts, servicios en grilla, agenda por WhatsApp como bloque destacado */
+:root{
+  --bg:#FBF6F3;
+  --surface:#FFFFFF;
+  --ink:#2B1B2E;
+  --muted:#6E5C6B;
+  --line:#EBDDD8;
+  --coral:#E4603F;
+  --coral-soft:#FBE3DA;
+  --sage:#3F7A5E;
+  --sage-soft:#E1EFE7;
+  --wa:#1FA855;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1A1219;--surface:#241A23;--ink:#F6ECEF;--muted:#BCA9B6;--line:#3A2C38;
+  --coral:#F2805F;--coral-soft:#3B221E;--sage:#7CC3A0;--sage-soft:#1D2E25;--wa:#2BC466;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1A1219;--surface:#241A23;--ink:#F6ECEF;--muted:#BCA9B6;--line:#3A2C38;
+  --coral:#F2805F;--coral-soft:#3B221E;--sage:#7CC3A0;--sage-soft:#1D2E25;--wa:#2BC466;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+
+/* nav */
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:19px;text-decoration:none}
+.mono{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--bg);font-size:15px;letter-spacing:.02em}
+.nav-cta{font-weight:600;font-size:15px;text-decoration:none;padding:9px 16px;border-radius:999px;border:1.5px solid var(--ink)}
+.nav-cta:hover{background:var(--ink);color:var(--bg)}
+
+/* hero */
+.hero .wrap{padding-block:40px 64px;display:grid;gap:28px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
+.hero h1{font-size:clamp(42px, 8vw, 88px);font-weight:800;letter-spacing:-.025em;max-width:13ch}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero .lead{font-size:clamp(18px,2.2vw,21px);color:var(--muted);max-width:52ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 16px var(--body);padding:15px 24px;border-radius:999px;border:0;cursor:pointer;text-decoration:none}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{filter:brightness(1.06)}
+.btn-ghost{background:transparent;color:var(--ink);text-decoration:underline;text-underline-offset:4px;padding-inline:8px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.tags li{font-size:14px;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+
+/* postergando */
+.focus{background:var(--coral-soft)}
+.focus .wrap{padding-block:64px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.focus h2{font-size:clamp(30px,4.4vw,46px);font-weight:700;letter-spacing:-.015em}
+.focus p.sub{color:var(--muted);margin-top:16px;max-width:42ch}
+.wins{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.wins li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--surface);padding:18px 20px;border-radius:16px}
+.wins .dot{width:12px;height:12px;border-radius:50%;background:var(--coral);margin-top:8px}
+.wins b{display:block;font-family:var(--display);font-size:19px;font-weight:700}
+.wins span{color:var(--muted);font-size:15.5px}
+
+/* servicios */
+section.block .wrap{padding-block:72px}
+.head{display:grid;gap:10px;margin-bottom:32px;max-width:640px}
+.head h2{font-size:clamp(30px,4.4vw,44px);font-weight:700;letter-spacing:-.015em}
+.head p{color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.svc{background:var(--surface);padding:28px;display:grid;gap:10px;align-content:start}
+.svc .k{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
+.svc h3{font-size:24px;font-weight:700}
+.svc p{color:var(--muted);font-size:15.5px}
+.svc button{justify-self:start;margin-top:6px;background:none;border:0;padding:0;font:600 15px var(--body);color:var(--coral);cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+
+/* pasos */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{counter-increment:s;display:grid;gap:8px;border-top:2px solid var(--ink);padding-top:16px}
+.steps li::before{content:"Paso " counter(s);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--coral)}
+.steps b{font-family:var(--display);font-size:21px}
+.steps span{color:var(--muted);font-size:15.5px}
+
+/* agenda */
+.agenda{background:var(--ink);color:var(--bg)}
+.agenda .wrap{padding-block:72px;display:grid;grid-template-columns:5fr 7fr;gap:44px;align-items:start}
+.agenda h2{font-size:clamp(32px,4.6vw,48px);font-weight:800;letter-spacing:-.02em}
+.agenda .intro p{opacity:.8;margin-top:14px;max-width:38ch}
+form{background:var(--surface);color:var(--ink);border-radius:22px;padding:28px;display:grid;gap:18px;min-width:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:6px;min-width:0}
+label,.legend{font-size:14px;font-weight:600}
+input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--coral)}
+textarea{resize:vertical;min-height:84px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label{font-weight:500;font-size:15px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);cursor:pointer;background:var(--bg)}
+.chips input:checked + label{background:var(--sage-soft);border-color:var(--sage);color:var(--ink)}
+.chips input:focus-visible + label{outline:3px solid var(--coral);outline-offset:2px}
+.preview{font-size:14px;color:var(--muted);background:var(--bg);border-radius:12px;padding:12px 14px;white-space:pre-wrap;border:1px dashed var(--line)}
+.err{color:var(--coral);font-size:14px;font-weight:600}
+form .btn-wa{justify-content:center;width:100%;font-size:17px}
+
+footer .wrap{padding-block:36px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;color:var(--muted);font-size:14.5px}
+footer a{font-weight:600;color:var(--ink)}
+
+.float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:20}
+.float svg{width:30px;height:30px}
+
+@media (max-width:760px){
+  .focus .wrap,.agenda .wrap{grid-template-columns:1fr}
+  .services,.steps{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  form{padding:22px}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.nav-cta{transition:filter .2s,background .2s,color .2s}}
+</style>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#inicio"><span class="mono">EB</span>Euge Benitez</a>
+    <a class="nav-cta" href="#agenda">Agendar consulta</a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <span class="eyebrow">Coach ontológico · Estrategia digital</span>
+    <h1>¿Qué estás <em>postergando</em> que ya es momento de trabajar?</h1>
+    <p class="lead">Soy Euge. Acompaño a emprendedores a crecer en Instagram y en sus negocios, con coaching para ordenar la cabeza y estrategia para mover las redes.</p>
+    <div class="hero-actions">
+      <a class="btn btn-wa" href="#agenda">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+        Agendá tu consulta por WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+    </div>
+    <ul class="tags" aria-label="Áreas de trabajo">
+      <li>Coaching ontológico</li><li>Estrategia</li><li>Community manager</li><li>Contenido UGC</li><li>Liderazgo en empresas</li>
+    </ul>
+  </div>
+</header>
+
+<section class="focus">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Sesiones individuales</span>
+      <h2 style="margin-top:10px">A veces no necesitás tener todas las respuestas.</h2>
+      <p class="sub">Necesitás un espacio para frenar, mirarte y encontrar nuevas posibilidades. Eso es una sesión de coaching.</p>
+    </div>
+    <ul class="wins">
+      <li><span class="dot"></span><div><b>Clarificar tus objetivos</b><span>Saber qué querés de verdad y por dónde empezar.</span></div></li>
+      <li><span class="dot"></span><div><b>Potenciar tus habilidades</b><span>Reconocer lo que ya tenés y usarlo a tu favor.</span></div></li>
+      <li><span class="dot"></span><div><b>Transformar obstáculos en oportunidades</b><span>Cambiar la mirada sobre lo que hoy te frena.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="servicios">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Cómo te puedo acompañar</span>
+      <h2>Servicios</h2>
+      <p>Elegí lo que necesitás y consultame. Si no sabés por cuál arrancar, lo charlamos en la primera conversación.</p>
+    </div>
+    <div class="services">
+      <article class="svc"><span class="k">Personas</span><h3>Coaching ontológico</h3><p>Sesiones individuales para destrabar decisiones, ordenar prioridades y avanzar con lo que venís postergando.</p><button type="button" data-svc="Coaching ontológico">Consultar por este servicio</button></article>
+      <article class="svc"><span class="k">Emprendedores</span><h3>Estrategia para Instagram</h3><p>Un plan claro para tu cuenta: a quién le hablás, qué publicar y cómo convertir seguidores en clientes.</p><button type="button" data-svc="Estrategia para Instagram">Consultar por este servicio</button></article>
+      <article class="svc"><span class="k">Marcas</span><h3>Community manager</h3><p>Me ocupo de tus redes: contenido, publicaciones y comunidad, para que vos te enfoques en tu negocio.</p><button type="button" data-svc="Community manager">Consultar por este servicio</button></article>
+      <article class="svc"><span class="k">Empresas</span><h3>Creando líderes</h3><p>Talleres y procesos de coaching para equipos y líderes que quieren comunicarse y trabajar mejor.</p><button type="button" data-svc="Creando líderes (empresas)">Consultar por este servicio</button></article>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap" style="padding-top:0">
+    <div class="head"><span class="eyebrow">Simple y rápido</span><h2>Cómo agendar</h2></div>
+    <ol class="steps">
+      <li><b>Completás tus datos</b><span>Elegís el servicio, tu día y horario preferido.</span></li>
+      <li><b>Se abre WhatsApp</b><span>Con el mensaje ya escrito. Solo tenés que enviarlo.</span></li>
+      <li><b>Confirmamos el turno</b><span>Te respondo para coordinar fecha, hora y modalidad.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="agenda" id="agenda">
+  <div class="wrap">
+    <div class="intro">
+      <span class="eyebrow" style="color:var(--sage)">Agenda</span>
+      <h2 style="margin-top:10px">Reservá tu consulta</h2>
+      <p>Completá el formulario y te llega directo a mi WhatsApp. Te respondo para confirmar el horario.</p>
+    </div>
+    <form id="f" novalidate>
+      <div class="row">
+        <div class="field"><label for="nombre">Tu nombre</label><input id="nombre" autocomplete="name" placeholder="Ej: Carla"></div>
+        <div class="field"><label for="servicio">Servicio</label>
+          <select id="servicio">
+            <option>Coaching ontológico</option>
+            <option>Estrategia para Instagram</option>
+            <option>Community manager</option>
+            <option>Creando líderes (empresas)</option>
+            <option>No sé, quiero que me orientes</option>
+          </select></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="dia">Día preferido</label>
+          <select id="dia"><option>Lunes</option><option>Martes</option><option>Miércoles</option><option>Jueves</option><option>Viernes</option><option>Sábado</option><option>Cualquier día</option></select></div>
+        <fieldset><span class="legend">Horario</span>
+          <div class="chips">
+            <input type="radio" name="hora" id="h1" value="Mañana" checked><label for="h1">Mañana</label>
+            <input type="radio" name="hora" id="h2" value="Tarde"><label for="h2">Tarde</label>
+            <input type="radio" name="hora" id="h3" value="Noche"><label for="h3">Noche</label>
+          </div></fieldset>
+      </div>
+      <fieldset><span class="legend">Modalidad</span>
+        <div class="chips">
+          <input type="radio" name="modo" id="m1" value="Online" checked><label for="m1">Online</label>
+          <input type="radio" name="modo" id="m2" value="Presencial"><label for="m2">Presencial</label>
+        </div></fieldset>
+      <div class="field"><label for="msg">Contame brevemente qué te gustaría trabajar (opcional)</label><textarea id="msg" placeholder="Ej: quiero ordenar mi emprendimiento y no sé por dónde empezar"></textarea></div>
+      <div class="field"><span class="legend">Así va a llegar tu mensaje</span><div class="preview" id="preview"></div></div>
+      <p class="err" id="err" hidden>Escribí tu nombre para poder enviar la consulta.</p>
+      <a class="btn btn-wa" id="send" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+        Enviar consulta por WhatsApp
+      </a>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Euge Benitez · Coach Ontológico</span>
+    <span>Instagram: <a href="https://www.instagram.com/soyeugebenitez" target="_blank" rel="noopener">@soyeugebenitez</a> · <a href="https://www.instagram.com/eugebenitez.ok" target="_blank" rel="noopener">@eugebenitez.ok</a></span>
+  </div>
+</footer>
+
+<a class="float" id="floatwa" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+// Número de WhatsApp de Euge: código de país + área + número, sin espacios ni "+" (ej: 5493815551234)
+const WHATSAPP = "5490000000000";
+
+const $ = id => document.getElementById(id);
+const radio = n => (document.querySelector(`input[name="${n}"]:checked`)||{}).value || "";
+function texto(){
+  const nombre = $("nombre").value.trim() || "[tu nombre]";
+  let t = `Hola Euge! Soy ${nombre}. Quiero agendar una consulta.\n` +
+    `• Servicio: ${$("servicio").value}\n` +
+    `• Día: ${$("dia").value} (${radio("hora").toLowerCase()})\n` +
+    `• Modalidad: ${radio("modo")}`;
+  const m = $("msg").value.trim();
+  if (m) t += `\n• Lo que quiero trabajar: ${m}`;
+  return t;
+}
+function update(){
+  const t = texto();
+  $("preview").textContent = t;
+  $("send").href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
+}
+$("f").addEventListener("input", update);
+$("f").addEventListener("change", update);
+$("f").addEventListener("submit", e => e.preventDefault());
+$("send").addEventListener("click", e => {
+  if (!$("nombre").value.trim()){ e.preventDefault(); $("err").hidden = false; $("nombre").focus(); }
+  else $("err").hidden = true;
+});
+$("floatwa").href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hola Euge! Quiero consultar por una sesión.")}`;
+document.querySelectorAll("[data-svc]").forEach(b => b.addEventListener("click", () => {
+  $("servicio").value = b.dataset.svc; update();
+  $("agenda").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+  setTimeout(() => $("nombre").focus({preventScroll:true}), 400);
+}));
+update();
+</script>
