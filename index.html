@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#141518">
+<style>[hidden]{display:none!important}img{max-width:100%}body{margin:0}</style>
+</head>
+<body>
+<title>MF/Growth</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="MF/Growth: páginas web para emprendedores, comercios y profesionales de Tucumán. Pedí tu boceto gratis por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;800;900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Identidad MF/Growth tomada del feed de Instagram: bandas alternadas negro / lima / crema, tipografía grotesca muy pesada, etiquetas chicas en mono como en los posts. Diseño de un solo tema a propósito (la marca es oscura). */
+:root{
+  --ink:#141518; --ink-2:#1D1F23; --ink-3:#2A2D33;
+  --lime:#C9F25B; --lime-ink:#141518;
+  --cream:#F2EFE7; --cream-2:#E6E2D7;
+  --fg:#F2EFE7; --mute:#A3A49E; --mute-dark:#55564F;
+  --wa:#1FA855;
+  --f-display:"Inter Tight","Arial Black",system-ui,sans-serif;
+  --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --r:18px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--ink);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);font-weight:900;letter-spacing:-.035em;line-height:.98;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.tag{font-family:var(--f-mono);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.band{padding-block:88px}
+.band.lime{background:var(--lime);color:var(--lime-ink)}
+.band.cream{background:var(--cream);color:var(--ink)}
+.band.dark2{background:var(--ink-2)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:36px}
+.sec-head h2{font-size:clamp(34px,5.2vw,60px);max-width:16ch}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;border-radius:999px;padding:14px 22px;font-size:16px;border:2px solid transparent;transition:transform .15s ease,background .15s ease;cursor:pointer;font-family:var(--f-body)}
+.btn:hover{transform:translateY(-2px)}
+.btn.lime{background:var(--lime);color:var(--lime-ink)}
+.btn.ghost{border-color:var(--ink-3);color:var(--fg);background:transparent}
+.btn.dark{background:var(--ink);color:var(--cream)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--ink-3)}
+header .wrap{display:flex;align-items:center;gap:20px;padding-block:14px}
+.logo{display:flex;align-items:baseline;gap:2px;text-decoration:none;font-family:var(--f-display);font-weight:900;font-size:26px;letter-spacing:-.05em;color:var(--lime)}
+.logo span{font-family:var(--f-body);font-weight:600;font-size:14px;letter-spacing:0;color:var(--cream)}
+.logo span b{color:var(--lime);font-weight:600}
+nav{display:flex;gap:22px;margin-left:auto}
+nav a{text-decoration:none;color:var(--mute);font-weight:500;font-size:15px}
+nav a:hover{color:var(--cream)}
+header .btn{padding:10px 16px;font-size:14.5px}
+@media (max-width:820px){nav{display:none}header .btn{margin-left:auto}}
+
+/* hero */
+.hero{padding-block:72px 88px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(46px,8.4vw,108px)}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero .lead{color:var(--mute);font-size:19px;max-width:46ch;margin-top:24px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero .note{margin-top:18px;color:var(--mute);font-size:14px}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+
+/* checklist widget */
+.check{background:var(--cream);color:var(--ink);border-radius:24px;padding:26px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);transform:rotate(1.2deg)}
+.check .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.check h3{font-size:30px;letter-spacing:-.03em}
+.check ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px}
+.check label{display:flex;gap:12px;align-items:center;padding:11px 12px;border-radius:12px;background:var(--cream-2);cursor:pointer;font-weight:500;font-size:15.5px}
+.check input{appearance:none;width:22px;height:22px;border:2px solid var(--ink);border-radius:6px;flex:none;display:grid;place-items:center;margin:0;cursor:pointer;background:var(--cream)}
+.check input:checked{background:var(--lime)}
+.check input:checked::after{content:"";width:6px;height:11px;border:solid var(--ink);border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.score{margin-top:16px;border-top:1.5px dashed var(--ink);padding-top:14px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.score b{font-family:var(--f-display);font-size:34px;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.score p{font-size:14.5px;max-width:28ch;flex:1;min-width:180px}
+.score a{font-weight:700}
+
+/* link vs web */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.vs .col{border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:18px}
+.vs .bad{background:color-mix(in srgb,var(--ink) 8%,transparent);border:1.5px solid color-mix(in srgb,var(--ink) 25%,transparent)}
+.vs .good{background:var(--ink);color:var(--cream)}
+.vs h3{font-size:28px}
+.vs ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.mock{display:grid;gap:8px}
+.mock i{display:block;height:34px;border-radius:999px;background:color-mix(in srgb,var(--ink) 18%,transparent)}
+.mock.site{grid-template-columns:1fr 1fr}
+.mock.site i{border-radius:10px;height:54px;background:var(--ink-3)}
+.mock.site i:first-child{grid-column:1/-1;height:70px;background:var(--lime)}
+@media (max-width:760px){.vs{grid-template-columns:1fr}}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.svc article{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.svc article .tag{color:var(--lime)}
+.svc h3{font-size:30px}
+.svc p{color:var(--mute)}
+.svc .ex{margin-top:auto;padding-top:8px;font-size:14px;color:var(--cream)}
+.svc .ex a{color:var(--lime)}
+@media (max-width:760px){.svc{grid-template-columns:1fr}}
+
+/* rubros */
+.rubros{display:flex;flex-wrap:wrap;gap:10px}
+.rubros span{font-family:var(--f-display);font-weight:800;font-size:clamp(20px,3vw,30px);letter-spacing:-.03em;padding:10px 20px;border-radius:999px;border:2px solid var(--ink)}
+.rubros span:nth-child(3n+1){background:var(--ink);color:var(--cream)}
+.rubros span:nth-child(3n+2){background:var(--lime)}
+.rubros span.ask{border-style:dashed;background:transparent}
+
+/* work */
+.work{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.shot{background:#FFFFFF;border-radius:20px;overflow:hidden;border:1px solid var(--ink-3);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.shot .bar{background:#161A5E;color:#FFFFFF;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;font-family:var(--f-display);font-weight:800;font-size:18px}
+.shot .bar small{background:#FFB52E;color:#2A1A00;border-radius:999px;padding:5px 12px;font-family:var(--f-body);font-size:12px;font-weight:700}
+.shot .body{padding:20px 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:#F4F5FC}
+.shot .p{background:#FFFFFF;border:1px solid #D6D9EE;border-radius:10px;padding:10px;display:grid;gap:6px}
+.shot .p i{display:block;height:46px;border-radius:6px;background:#EEF0FB}
+.shot .p b{font-family:var(--f-mono);font-size:12px;color:#0B0D2E}
+.shot .p em{height:8px;border-radius:4px;background:#D6D9EE;display:block}
+.shot .p span{font-size:10.5px;font-weight:700;background:#23278A;color:#fff;border-radius:6px;text-align:center;padding:4px}
+.work h3{font-size:clamp(34px,4.6vw,52px)}
+.work .facts{display:grid;gap:10px;margin:22px 0 26px;padding:0;list-style:none}
+.work .facts li{display:flex;gap:12px;align-items:baseline;color:var(--mute)}
+.work .facts li b{color:var(--cream);font-family:var(--f-mono);font-size:13px;min-width:62px}
+@media (max-width:860px){.work{grid-template-columns:1fr}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
+.steps li{list-style:none;padding:22px 20px 0 0;display:grid;gap:10px;min-width:0}
+.steps .n{font-family:var(--f-display);font-weight:900;font-size:64px;letter-spacing:-.06em;line-height:1}
+.steps li:last-child .n{color:var(--ink);background:var(--lime);display:inline-block;padding:0 10px;border-radius:12px;justify-self:start}
+.steps h3{font-size:22px;letter-spacing:-.02em}
+.steps p{font-size:15px;color:var(--mute-dark)}
+ol.steps{margin:0;padding:0}
+@media (max-width:820px){.steps{grid-template-columns:1fr 1fr;row-gap:28px}}
+@media (max-width:460px){.steps{grid-template-columns:1fr}}
+
+/* reasons + myth */
+.reasons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.reasons div{padding:26px;border-radius:var(--r);background:var(--ink-2);border:1px solid var(--ink-3);display:grid;gap:10px;align-content:start}
+.reasons h3{font-size:26px}
+.reasons p{color:var(--mute)}
+@media (max-width:820px){.reasons{grid-template-columns:1fr}}
+.myth{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r);overflow:hidden}
+.myth>div{padding:30px;display:grid;gap:10px;align-content:start}
+.myth .m{background:var(--ink-3)}
+.myth .m p{font-family:var(--f-display);font-weight:800;font-size:26px;letter-spacing:-.03em;text-decoration:line-through;text-decoration-thickness:3px;color:var(--mute)}
+.myth .t{background:var(--lime);color:var(--ink)}
+.myth .t p{font-family:var(--f-display);font-weight:800;font-size:26px;letter-spacing:-.03em}
+@media (max-width:760px){.myth{grid-template-columns:1fr}}
+
+/* boceto form */
+.boceto{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.boceto h2{font-size:clamp(44px,7vw,86px)}
+.boceto .lead{font-size:18px;margin-top:20px;max-width:40ch}
+form{background:var(--ink);color:var(--cream);border-radius:24px;padding:28px;display:grid;gap:14px}
+.field{display:grid;gap:6px}
+.field label{font-family:var(--f-mono);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.field input,.field select{width:100%;background:var(--ink-2);border:1.5px solid var(--ink-3);border-radius:12px;padding:12px 14px;color:var(--cream);font:inherit}
+.field input:focus,.field select:focus{border-color:var(--lime);outline:none}
+.wa{display:flex;justify-content:center;align-items:center;gap:10px;background:var(--wa);color:#FFFFFF;text-decoration:none;font-weight:700;border-radius:14px;padding:16px;font-size:17px}
+.wa[aria-disabled="true"]{opacity:.45;pointer-events:none}
+.fine{font-size:13px;color:var(--mute)}
+.phone{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:28px;font-size:15px}
+.phone b{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.copy{border:1.5px solid var(--ink);background:transparent;border-radius:999px;padding:6px 12px;font-weight:600;cursor:pointer;color:var(--ink);font:inherit;font-size:13.5px}
+@media (max-width:860px){.boceto{grid-template-columns:1fr}}
+
+footer{padding-block:34px;border-top:1px solid var(--ink-3);color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--lime);text-decoration:none;font-weight:600}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--lime);color:var(--ink);padding:10px 18px;border-radius:999px;font-weight:700;z-index:40}
+</style>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="MF/Growth, inicio">mf<span><b>/</b>growth</span></a>
+    <nav aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#proceso">Cómo trabajamos</a>
+    </nav>
+    <a class="btn lime" href="#boceto">Pedí tu boceto gratis</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="tag" style="color:var(--lime)">Páginas web · Tucumán</p>
+        <h1 style="margin-top:18px">Si no te encuentran, <em>no te compran.</em></h1>
+        <p class="lead">Diseñamos páginas web para emprendedores, comercios y profesionales que quieren dejar de depender solo de Instagram y empezar a recibir más consultas.</p>
+        <div class="ctas">
+          <a class="btn lime" href="#boceto">Pedí tu boceto gratis</a>
+          <a class="btn ghost" href="#trabajos">Ver un trabajo real</a>
+        </div>
+        <p class="note">Te armamos una muestra de tu web. Si te gusta, seguimos. Si no, no pasa nada.</p>
+      </div>
+
+      <div class="check" aria-labelledby="chk-t">
+        <div class="top"><span class="tag">Hacé la prueba</span><span class="tag">MF/Growth</span></div>
+        <h3 id="chk-t">¿Tu web vende o solo está ahí?</h3>
+        <ul id="checklist">
+          <li><label><input type="checkbox" id="c1"> Carga rápido</label></li>
+          <li><label><input type="checkbox" id="c2"> Se ve bien en el celular</label></li>
+          <li><label><input type="checkbox" id="c3"> Tiene botón directo a WhatsApp</label></li>
+          <li><label><input type="checkbox" id="c4"> Muestra precios y servicios claros</label></li>
+          <li><label><input type="checkbox" id="c5"> Aparece cuando te buscan en Google</label></li>
+        </ul>
+        <div class="score" aria-live="polite">
+          <b id="sc">0/5</b>
+          <p id="sc-msg">Marcá lo que ya tiene tu web. Si todavía no tenés, dejala en cero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band lime">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Un link en la bio no es una página web.</h2>
+        <p class="tag">Instagram vs. tu web</p>
+      </div>
+      <div class="vs">
+        <div class="col bad">
+          <div class="mock" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <h3>Link en la bio</h3>
+          <ul>
+            <li>Una lista de botones igual a la de todos.</li>
+            <li>Depende del algoritmo: tu cuenta no es tuya.</li>
+            <li>No aparece cuando te buscan en Google.</li>
+          </ul>
+        </div>
+        <div class="col good">
+          <div class="mock site" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <h3>Tu página web</h3>
+          <ul>
+            <li>Tu marca, tu catálogo y tu información completa.</li>
+            <li>Es tuya: nadie te la puede bajar.</li>
+            <li>Aparece en Google y vende las 24 horas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="servicios">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Qué podemos hacer por tu negocio</h2>
+        <p class="tag" style="color:var(--mute)">Todo con botón a tu WhatsApp</p>
+      </div>
+      <div class="svc">
+        <article>
+          <span class="tag">Presencia completa</span>
+          <h3>Páginas web completas</h3>
+          <p>Quiénes son, qué ofrecen, dónde están y cómo contactarlos. Una web moderna, rápida y pensada primero para el celular.</p>
+        </article>
+        <article>
+          <span class="tag">Conseguir clientes</span>
+          <h3>Landing pages</h3>
+          <p>Una sola página enfocada en un servicio o una promo, hecha para que la persona que llega te escriba.</p>
+        </article>
+        <article>
+          <span class="tag">Vender</span>
+          <h3>Catálogo online con pedidos por WhatsApp</h3>
+          <p>Tus productos con precios y fotos. El cliente arma el pedido y te llega escrito a WhatsApp, listo para confirmar.</p>
+          <p class="ex">Ejemplo real: <a href="#trabajos">BravoPet</a></p>
+        </article>
+        <article>
+          <span class="tag">Organizar</span>
+          <h3>Sistema de turnos online</h3>
+          <p>Para consultorios, coaches y profesionales: el cliente elige día y horario sin que tengas que responder uno por uno.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>¿Para quién es?</h2>
+        <p class="tag" style="color:var(--mute-dark)">Si tenés clientes que te buscan</p>
+      </div>
+      <div class="rubros">
+        <span>Perfumerías</span><span>Gastronomía</span><span>Coaches</span><span>Seguros</span><span>Consultorios</span><span>Pet shops</span><span>Inmobiliarias</span><span>Entrenadores</span><span class="ask">¿Y el tuyo?</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark2" id="trabajos">
+    <div class="wrap work">
+      <a class="shot" href="https://martinguillermodramisalegre-ai.github.io/bravopet/" target="_blank" rel="noopener" aria-label="Abrir la web de BravoPet" style="text-decoration:none">
+        <div class="bar">BravoPet <small>Mi pedido · 2</small></div>
+        <div class="body" aria-hidden="true">
+          <div class="p"><i></i><em></em><b>$49.000</b><span>Agregar</span></div>
+          <div class="p"><i></i><em></em><b>$28.700</b><span>Agregar</span></div>
+          <div class="p"><i></i><em></em><b>$56.800</b><span>Agregar</span></div>
+        </div>
+      </a>
+      <div>
+        <p class="tag" style="color:var(--lime)">Trabajo real · Pet shop</p>
+        <h3 style="margin-top:14px">BravoPet Tucumán</h3>
+        <ul class="facts">
+          <li><b>140+</b>alimentos para perros y gatos, con filtros por animal, marca y etapa</li>
+          <li><b>1 toque</b>el pedido se arma solo y llega escrito al WhatsApp del negocio</li>
+          <li><b>$/kg</b>precio por kilo y regalos visibles en cada bolsa</li>
+        </ul>
+        <a class="btn lime" href="https://martinguillermodramisalegre-ai.github.io/bravopet/" target="_blank" rel="noopener">Ver la web en vivo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream" id="proceso">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>De la idea a tu web en 4 pasos</h2>
+        <p class="tag" style="color:var(--mute-dark)">Sin vueltas y sin tecnicismos</p>
+      </div>
+      <ol class="steps">
+        <li><span class="n">01</span><h3>Charlamos sobre tu negocio</h3><p>Por WhatsApp: qué vendés, a quién y qué querés que haga la gente cuando entre.</p></li>
+        <li><span class="n">02</span><h3>Diseñamos un boceto con tu marca</h3><p>Tus colores, tu logo y tus productos. Gratis y sin compromiso.</p></li>
+        <li><span class="n">03</span><h3>Ajustamos todo lo que quieras</h3><p>Cambiamos textos, fotos y secciones hasta que te guste.</p></li>
+        <li><span class="n">04</span><h3>¡Tu web online!</h3><p>Publicada, con tu link para Instagram, WhatsApp y Google.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>3 razones para tener tu web</h2>
+        <p class="tag" style="color:var(--mute)">Además de Instagram</p>
+      </div>
+      <div class="reasons">
+        <div><h3>Es tuya</h3><p>Tu cuenta de Instagram depende del algoritmo. Tu web no te la puede bajar nadie.</p></div>
+        <div><h3>Da confianza</h3><p>El cliente ve un negocio serio, con precios, información clara y una forma directa de contactarte.</p></div>
+        <div><h3>Vende 24/7</h3><p>Te encuentran en Google y te escriben a cualquier hora, incluso mientras dormís.</p></div>
+      </div>
+      <div class="myth">
+        <div class="m"><span class="tag" style="color:var(--mute)">Mito</span><p>Una página web es carísima y tarda meses.</p></div>
+        <div class="t"><span class="tag">Realidad</span><p>Hoy podés tener una web profesional, rápida y hecha a medida de tu negocio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band lime" id="boceto">
+    <div class="wrap boceto">
+      <div>
+        <p class="tag">Sin cargo · Sin compromiso</p>
+        <h2 style="margin-top:16px">Pedí tu boceto gratis.</h2>
+        <p class="lead">Contanos de tu negocio y te mostramos cómo podría verse tu página web. Si te gusta, seguimos. Si no, no pasa nada.</p>
+        <div class="phone">
+          <span>WhatsApp <b id="ph">+54 381 558-4132</b></span>
+          <button class="copy" type="button" id="cp">Copiar</button>
+        </div>
+        <p style="margin-top:10px;font-size:15px">Instagram <a href="https://instagram.com/mf.growth" target="_blank" rel="noopener" style="font-weight:700">@mf.growth</a></p>
+      </div>
+      <form id="f" novalidate>
+        <div class="field"><label for="fn">Tu nombre</label><input id="fn" autocomplete="name" placeholder="Ej: Martina"></div>
+        <div class="field"><label for="fb">Nombre del negocio</label><input id="fb" placeholder="Ej: Munna Perfumería"></div>
+        <div class="field"><label for="fr">Rubro</label>
+          <select id="fr"><option value="">Elegí uno</option><option>Perfumería</option><option>Gastronomía</option><option>Coach / entrenador</option><option>Seguros</option><option>Consultorio</option><option>Pet shop</option><option>Inmobiliaria</option><option>Otro</option></select></div>
+        <div class="field"><label for="fi">Instagram del negocio (opcional)</label><input id="fi" placeholder="@tunegocio"></div>
+        <div class="field"><label for="fs">¿Qué necesitás?</label>
+          <select id="fs"><option>Página web completa</option><option>Landing page</option><option>Catálogo con pedidos por WhatsApp</option><option>Sistema de turnos online</option><option>No sé, quiero que me asesoren</option></select></div>
+        <a class="wa" id="wa" href="#" target="_blank" rel="noopener" aria-disabled="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c.1.2.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.7-.1 1.3z"/></svg>
+          Pedir boceto por WhatsApp
+        </a>
+        <p class="fine" id="hint">Completá el nombre de tu negocio para armar el mensaje.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b style="color:var(--cream)">MF/Growth</b> · Making webs, whenever, wherever · Tucumán, Argentina</span>
+    <a href="https://instagram.com/mf.growth" target="_blank" rel="noopener">@mf.growth</a>
+  </div>
+</footer>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const PHONE="543815584132";
+const $=id=>document.getElementById(id);
+
+/* checklist */
+const msgs=["Si todavía no tenés web, este es el momento. Te armamos un boceto gratis.","Le falta casi todo. Escribinos y lo resolvemos.","Va encaminada, pero está dejando clientes afuera.","Bien, aunque le faltan cosas que hacen que te compren.","Casi. Un detalle más y queda completa.","Tu web vende. Si querés otra para otro negocio, ya sabés dónde estamos."];
+function score(){
+  const n=[...document.querySelectorAll("#checklist input")].filter(i=>i.checked).length;
+  $("sc").textContent=n+"/5";
+  $("sc-msg").innerHTML=msgs[n]+(n<5?' <a href="#boceto">Pedí tu boceto</a>':"");
+}
+document.getElementById("checklist").addEventListener("change",score);
+
+/* WhatsApp form */
+function build(){
+  const v=id=>$(id).value.trim();
+  const a=$("wa");
+  if(!v("fb")){a.setAttribute("aria-disabled","true");a.href="#";$("hint").textContent="Completá el nombre de tu negocio para armar el mensaje.";return}
+  a.setAttribute("aria-disabled","false");
+  $("hint").textContent="Se abre WhatsApp con tu mensaje escrito. Solo tenés que enviarlo.";
+  const L=["¡Hola MF/Growth! Quiero mi boceto gratis 👋",""];
+  if(v("fn"))L.push("Soy "+v("fn")+".");
+  L.push("Negocio: "+v("fb"));
+  if(v("fr"))L.push("Rubro: "+v("fr"));
+  if(v("fi"))L.push("Instagram: "+v("fi"));
+  L.push("Necesito: "+v("fs"));
+  a.href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(L.join("\n"));
+}
+$("f").addEventListener("input",build);
+$("f").addEventListener("change",build);
+$("f").addEventListener("submit",e=>e.preventDefault());
+
+/* copy phone */
+let tt;function toast(m){const t=$("toast");t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,1800)}
+$("cp").addEventListener("click",()=>{
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("ph"));const s=getSelection();s.removeAllRanges();s.addRange(r);toast("Número seleccionado: copialo")};
+  try{navigator.clipboard.writeText("+54 381 558-4132").then(()=>toast("Número copiado"),sel)}catch(e){sel()}
+});
+build();score();
+</script>
+
+</body>
+</html>
