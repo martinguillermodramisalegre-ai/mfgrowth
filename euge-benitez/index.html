@@ -1,203 +1,323 @@
-<title>Euge Benitez Coaching</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Euge Benitez · Coach Ontológico</title>
+<meta name="description" content="Coaching ontológico y estrategia digital para emprendedores, marcas y empresas. Agendá tu consulta por WhatsApp.">
+<meta name="theme-color" content="#FAF8F5">
+<meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
 <style>
-/* Layout: una columna cálida, hero tipográfico con la pregunta de sus posts, servicios en grilla, agenda por WhatsApp como bloque destacado */
 :root{
-  --bg:#FBF6F3;
+  --bg:#FAF8F5;
   --surface:#FFFFFF;
-  --ink:#2B1B2E;
-  --muted:#6E5C6B;
-  --line:#EBDDD8;
-  --coral:#E4603F;
-  --coral-soft:#FBE3DA;
-  --sage:#3F7A5E;
-  --sage-soft:#E1EFE7;
-  --wa:#1FA855;
-  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
-  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sand:#F3EEE7;
+  --ink:#24313B;
+  --muted:#5F6B73;
+  --line:#E7E1D8;
+  --accent:#8A5F3C;      /* caramelo, para textos y detalles */
+  --accent-soft:#F4EADF;
+  --sage:#4F6E5E;
+  --sage-soft:#E9F0EB;
+  --wa:#15954F;
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --radius:18px;
+  --shadow:0 1px 2px rgba(36,49,59,.04), 0 8px 28px rgba(36,49,59,.06);
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#1A1219;--surface:#241A23;--ink:#F6ECEF;--muted:#BCA9B6;--line:#3A2C38;
-  --coral:#F2805F;--coral-soft:#3B221E;--sage:#7CC3A0;--sage-soft:#1D2E25;--wa:#2BC466;color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#1A1219;--surface:#241A23;--ink:#F6ECEF;--muted:#BCA9B6;--line:#3A2C38;
-  --coral:#F2805F;--coral-soft:#3B221E;--sage:#7CC3A0;--sage-soft:#1D2E25;--wa:#2BC466;color-scheme:dark}
-
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
-.wrap{max-width:1040px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;margin:0;letter-spacing:-.01em;text-wrap:balance}
 p{margin:0}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
 
-/* nav */
-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:19px;text-decoration:none}
-.mono{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--bg);font-size:15px;letter-spacing:.02em}
-.nav-cta{font-weight:600;font-size:15px;text-decoration:none;padding:9px 16px;border-radius:999px;border:1.5px solid var(--ink)}
-.nav-cta:hover{background:var(--ink);color:var(--bg)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(18px, env(safe-area-inset-left));padding-right:max(18px, env(safe-area-inset-right))}
+.eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 
-/* hero */
-.hero .wrap{padding-block:40px 64px;display:grid;gap:28px}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
-.hero h1{font-size:clamp(42px, 8vw, 88px);font-weight:800;letter-spacing:-.025em;max-width:13ch}
-.hero h1 em{font-style:normal;color:var(--coral)}
-.hero .lead{font-size:clamp(18px,2.2vw,21px);color:var(--muted);max-width:52ch}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:10px;font:600 16px var(--body);padding:15px 24px;border-radius:999px;border:0;cursor:pointer;text-decoration:none}
-.btn-wa{background:var(--wa);color:#fff}
-.btn-wa:hover{filter:brightness(1.06)}
-.btn-ghost{background:transparent;color:var(--ink);text-decoration:underline;text-underline-offset:4px;padding-inline:8px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
-.tags li{font-size:14px;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:30;background:rgba(250,248,245,.9);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.mono{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font:600 14px var(--serif);letter-spacing:.04em;border:1px solid #E9D9C7}
+.brand b{font:500 18px var(--serif);white-space:nowrap}
+.brand small{display:block;font-size:12px;color:var(--muted);line-height:1.2}
+.nav-links{display:none;gap:28px;font-size:15px}
+.nav-links a{text-decoration:none;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{flex:none;font-weight:600;font-size:14px;text-decoration:none;padding:10px 16px;border-radius:999px;background:var(--ink);color:#fff}
 
-/* postergando */
-.focus{background:var(--coral-soft)}
-.focus .wrap{padding-block:64px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.focus h2{font-size:clamp(30px,4.4vw,46px);font-weight:700;letter-spacing:-.015em}
-.focus p.sub{color:var(--muted);margin-top:16px;max-width:42ch}
-.wins{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.wins li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--surface);padding:18px 20px;border-radius:16px}
-.wins .dot{width:12px;height:12px;border-radius:50%;background:var(--coral);margin-top:8px}
-.wins b{display:block;font-family:var(--display);font-size:19px;font-weight:700}
-.wins span{color:var(--muted);font-size:15.5px}
+/* ---------- botones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;font:600 16px var(--sans);padding:14px 24px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;transition:transform .15s, box-shadow .2s, background .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 6px 18px rgba(21,149,79,.22)}
+.btn-wa:hover{background:#12854a}
+.btn-wa:active{transform:scale(.98)}
+.btn-line{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.btn-line:hover{border-color:#cfc6b9}
+
+/* ---------- hero ---------- */
+.hero .wrap{padding-top:36px;padding-bottom:56px;display:grid;gap:36px}
+.hero h1{font-size:clamp(36px, 9.5vw, 64px);margin-top:14px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lead{margin-top:18px;font-size:clamp(17px, 4.4vw, 19px);color:var(--muted);max-width:46ch}
+.actions{display:grid;gap:10px;margin-top:28px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:24px;padding:0;list-style:none;font-size:14px;color:var(--muted)}
+.meta li{display:flex;align-items:center;gap:8px}
+.meta li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sage)}
+
+.card-focus{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:26px 22px;box-shadow:var(--shadow)}
+.card-focus h2{font-size:clamp(22px, 5.6vw, 27px)}
+.card-focus > p{color:var(--muted);margin-top:10px;font-size:15.5px}
+.wins{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:4px}
+.wins li{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;padding:14px 0;border-top:1px solid var(--line)}
+.wins .ic{width:36px;height:36px;border-radius:12px;background:var(--sage-soft);display:grid;place-items:center;color:var(--sage)}
+.wins .ic svg{width:18px;height:18px}
+.wins b{display:block;font-weight:600;font-size:16px}
+.wins span{color:var(--muted);font-size:14.5px}
+
+/* ---------- secciones ---------- */
+section{scroll-margin-top:72px}
+.sec .wrap{padding-top:64px;padding-bottom:64px}
+.sec-sand{background:var(--sand)}
+.head{max-width:620px;margin-bottom:32px}
+.head h2{font-size:clamp(28px, 7vw, 42px);margin-top:10px}
+.head p{color:var(--muted);margin-top:12px}
+
+/* sobre */
+.about{display:grid;gap:28px;align-items:center}
+.portrait{aspect-ratio:3/2;width:100%;border-radius:24px;background:
+  radial-gradient(120% 80% at 20% 10%, #fff 0%, transparent 60%),
+  linear-gradient(160deg, var(--accent-soft), var(--sage-soft));
+  border:1px solid var(--line);display:grid;place-items:center;position:relative;overflow:hidden}
+.portrait span{font:500 72px var(--serif);color:var(--accent);opacity:.85}
+.portrait small{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:12px;color:var(--muted)}
+.about p + p{margin-top:14px}
+.about .txt p{color:var(--muted)}
+.about .txt h2{font-size:clamp(28px, 7vw, 40px);margin:10px 0 18px}
+.quote{margin-top:22px;padding:18px 20px;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 14px 14px 0;font:italic 400 18px/1.5 var(--serif);color:var(--ink)}
 
 /* servicios */
-section.block .wrap{padding-block:72px}
-.head{display:grid;gap:10px;margin-bottom:32px;max-width:640px}
-.head h2{font-size:clamp(30px,4.4vw,44px);font-weight:700;letter-spacing:-.015em}
-.head p{color:var(--muted)}
-.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.svc{background:var(--surface);padding:28px;display:grid;gap:10px;align-content:start}
-.svc .k{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
-.svc h3{font-size:24px;font-weight:700}
+.services{display:grid;gap:14px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
+.svc .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.svc .ic{width:44px;height:44px;border-radius:14px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.svc .ic svg{width:22px;height:22px}
+.svc .k{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);background:var(--sage-soft);padding:5px 10px;border-radius:999px}
+.svc h3{font-size:22px;margin-top:6px}
 .svc p{color:var(--muted);font-size:15.5px}
-.svc button{justify-self:start;margin-top:6px;background:none;border:0;padding:0;font:600 15px var(--body);color:var(--coral);cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.svc button{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0;background:none;border:0;font:600 15px var(--sans);color:var(--accent);cursor:pointer}
+.svc button svg{width:16px;height:16px;transition:transform .2s}
+.svc button:hover svg{transform:translateX(3px)}
 
 /* pasos */
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;counter-reset:s;list-style:none;margin:0;padding:0}
-.steps li{counter-increment:s;display:grid;gap:8px;border-top:2px solid var(--ink);padding-top:16px}
-.steps li::before{content:"Paso " counter(s);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--coral)}
-.steps b{font-family:var(--display);font-size:21px}
-.steps span{color:var(--muted);font-size:15.5px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:500 18px var(--serif)}
+.steps b{display:block;font-weight:600;font-size:16.5px}
+.steps span{color:var(--muted);font-size:15px}
 
 /* agenda */
-.agenda{background:var(--ink);color:var(--bg)}
-.agenda .wrap{padding-block:72px;display:grid;grid-template-columns:5fr 7fr;gap:44px;align-items:start}
-.agenda h2{font-size:clamp(32px,4.6vw,48px);font-weight:800;letter-spacing:-.02em}
-.agenda .intro p{opacity:.8;margin-top:14px;max-width:38ch}
-form{background:var(--surface);color:var(--ink);border-radius:22px;padding:28px;display:grid;gap:18px;min-width:0}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.field{display:grid;gap:6px;min-width:0}
-label,.legend{font-size:14px;font-weight:600}
-input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--coral)}
-textarea{resize:vertical;min-height:84px}
-fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips input{position:absolute;opacity:0;width:1px;height:1px}
-.chips label{font-weight:500;font-size:15px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);cursor:pointer;background:var(--bg)}
-.chips input:checked + label{background:var(--sage-soft);border-color:var(--sage);color:var(--ink)}
-.chips input:focus-visible + label{outline:3px solid var(--coral);outline-offset:2px}
-.preview{font-size:14px;color:var(--muted);background:var(--bg);border-radius:12px;padding:12px 14px;white-space:pre-wrap;border:1px dashed var(--line)}
-.err{color:var(--coral);font-size:14px;font-weight:600}
-form .btn-wa{justify-content:center;width:100%;font-size:17px}
+.agenda-grid{display:grid;gap:28px}
+.agenda-info p{color:var(--muted);margin-top:12px}
+.agenda-info ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px;font-size:15px}
+.agenda-info li{display:flex;gap:10px;align-items:center}
+.agenda-info li svg{width:18px;height:18px;color:var(--sage);flex:none}
+form{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px 18px;display:grid;gap:18px;min-width:0;box-shadow:var(--shadow)}
+.row{display:grid;gap:18px}
+.field{display:grid;gap:8px;min-width:0}
+label,.legend{font-size:14px;font-weight:600;color:var(--ink)}
+input[type=text],select,textarea{appearance:none;-webkit-appearance:none;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:13px 14px;width:100%;min-height:50px;transition:border-color .2s, box-shadow .2s}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%235F6B73' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='m1 1.5 5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);background:#fff}
+textarea{resize:vertical;min-height:96px}
+input.bad{border-color:#C0563A;box-shadow:0 0 0 3px #F8E1DA}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px;min-width:0}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:4px}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg label{display:grid;place-items:center;min-height:42px;border-radius:10px;font-weight:500;font-size:15px;color:var(--muted);cursor:pointer;transition:background .2s,color .2s}
+.seg input:checked + label{background:#fff;color:var(--ink);font-weight:600;box-shadow:0 1px 3px rgba(36,49,59,.12)}
+.seg input:focus-visible + label{outline:2px solid var(--accent);outline-offset:1px}
+details.preview{font-size:14px;color:var(--muted)}
+details.preview summary{cursor:pointer;font-weight:600;color:var(--ink);min-height:32px;display:flex;align-items:center}
+details.preview pre{margin:8px 0 0;font:inherit;white-space:pre-wrap;background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:12px 14px}
+.err{color:#A8452B;font-size:14px;font-weight:600}
+form .btn-wa{width:100%;font-size:17px}
+.note{font-size:13px;color:var(--muted);text-align:center}
 
-footer .wrap{padding-block:36px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;color:var(--muted);font-size:14.5px}
-footer a{font-weight:600;color:var(--ink)}
+/* footer */
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-top:32px;padding-bottom:calc(96px + env(safe-area-inset-bottom));display:grid;gap:14px;color:var(--muted);font-size:14.5px}
+footer a{font-weight:600;color:var(--ink);text-decoration:none}
+footer a:hover{color:var(--accent)}
+.socials{display:flex;flex-wrap:wrap;gap:10px 18px}
 
-.float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:20}
-.float svg{width:30px;height:30px}
+/* barra fija en celular */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px max(14px, env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));background:rgba(250,248,245,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);transition:transform .25s ease}
+.mbar .btn{width:100%}
+.mbar.hide{transform:translateY(110%)}
 
-@media (max-width:760px){
-  .focus .wrap,.agenda .wrap{grid-template-columns:1fr}
-  .services,.steps{grid-template-columns:1fr}
-  .row{grid-template-columns:1fr}
-  form{padding:22px}
+/* ---------- tablet / escritorio ---------- */
+@media (min-width:640px){
+  .actions{display:flex;flex-wrap:wrap}
+  .services{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .row{grid-template-columns:1fr 1fr}
+  form{padding:30px}
+  .card-focus{padding:32px}
 }
-@media (prefers-reduced-motion:no-preference){.btn,.nav-cta{transition:filter .2s,background .2s,color .2s}}
+@media (min-width:900px){
+  .nav-links{display:flex}
+  .hero .wrap{grid-template-columns:1.15fr 1fr;align-items:center;padding-top:64px;padding-bottom:88px;gap:56px}
+  .sec .wrap{padding-top:96px;padding-bottom:96px}
+  .about{grid-template-columns:360px 1fr;gap:64px}
+  .portrait{aspect-ratio:4/5}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .steps li{grid-template-columns:1fr;gap:14px}
+  .agenda-grid{grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+  .agenda-info{position:sticky;top:96px}
+  .mbar{display:none}
+  footer .wrap{grid-template-columns:1fr auto;align-items:center;padding-bottom:32px}
+}
 </style>
+</head>
+<body>
 
-<nav>
+<nav class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#inicio"><span class="mono">EB</span>Euge Benitez</a>
-    <a class="nav-cta" href="#agenda">Agendar consulta</a>
+    <a class="brand" href="#inicio" aria-label="Euge Benitez, inicio">
+      <span class="mono">EB</span>
+      <span><b>Euge Benitez</b><small>Coach ontológico</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#sobre">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#como">Cómo agendar</a>
+    </div>
+    <a class="nav-cta" href="#agenda">Agendar</a>
   </div>
 </nav>
 
+<main>
 <header class="hero" id="inicio">
   <div class="wrap">
-    <span class="eyebrow">Coach ontológico · Estrategia digital</span>
-    <h1>¿Qué estás <em>postergando</em> que ya es momento de trabajar?</h1>
-    <p class="lead">Soy Euge. Acompaño a emprendedores a crecer en Instagram y en sus negocios, con coaching para ordenar la cabeza y estrategia para mover las redes.</p>
-    <div class="hero-actions">
-      <a class="btn btn-wa" href="#agenda">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
-        Agendá tu consulta por WhatsApp
-      </a>
-      <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+    <div>
+      <span class="eyebrow">Coaching ontológico · Estrategia digital</span>
+      <h1>¿Qué estás <em>postergando</em> que ya es momento de trabajar?</h1>
+      <p class="lead">Acompaño a personas, emprendedores y equipos a ordenar sus objetivos y avanzar con claridad, combinando coaching y estrategia para redes.</p>
+      <div class="actions">
+        <a class="btn btn-wa" href="#agenda">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Agendar consulta
+        </a>
+        <a class="btn btn-line" href="#servicios">Ver servicios</a>
+      </div>
+      <ul class="meta">
+        <li>Online y presencial</li><li>Sesiones individuales</li><li>Empresas y equipos</li>
+      </ul>
     </div>
-    <ul class="tags" aria-label="Áreas de trabajo">
-      <li>Coaching ontológico</li><li>Estrategia</li><li>Community manager</li><li>Contenido UGC</li><li>Liderazgo en empresas</li>
-    </ul>
+
+    <aside class="card-focus" aria-label="Qué vas a trabajar">
+      <span class="eyebrow">En cada sesión</span>
+      <h2 style="margin-top:8px">No necesitás tener todas las respuestas.</h2>
+      <p>Necesitás un espacio para frenar, mirarte y encontrar nuevas posibilidades.</p>
+      <ul class="wins">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><div><b>Clarificar tus objetivos</b><span>Saber qué querés de verdad y por dónde empezar.</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 10l7-7 7 7"/></svg></span><div><b>Potenciar tus habilidades</b><span>Reconocer lo que ya tenés y usarlo a tu favor.</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17c4 0 4-10 8-10s4 10 8 10"/></svg></span><div><b>Transformar obstáculos</b><span>Cambiar la mirada sobre lo que hoy te frena.</span></div></li>
+      </ul>
+    </aside>
   </div>
 </header>
 
-<section class="focus">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">Sesiones individuales</span>
-      <h2 style="margin-top:10px">A veces no necesitás tener todas las respuestas.</h2>
-      <p class="sub">Necesitás un espacio para frenar, mirarte y encontrar nuevas posibilidades. Eso es una sesión de coaching.</p>
+<section class="sec sec-sand" id="sobre">
+  <div class="wrap about">
+    <div class="portrait" role="img" aria-label="Espacio para la foto de Euge">
+      <span>EB</span>
+      <small>Espacio para tu foto</small>
     </div>
-    <ul class="wins">
-      <li><span class="dot"></span><div><b>Clarificar tus objetivos</b><span>Saber qué querés de verdad y por dónde empezar.</span></div></li>
-      <li><span class="dot"></span><div><b>Potenciar tus habilidades</b><span>Reconocer lo que ya tenés y usarlo a tu favor.</span></div></li>
-      <li><span class="dot"></span><div><b>Transformar obstáculos en oportunidades</b><span>Cambiar la mirada sobre lo que hoy te frena.</span></div></li>
-    </ul>
+    <div class="txt">
+      <span class="eyebrow">Sobre mí</span>
+      <h2>Hola, soy Euge.</h2>
+      <p>Soy coach ontológico y trabajo con estrategia digital. Acompaño a quienes sienten que están postergando algo importante, ya sea un cambio personal, un emprendimiento o el crecimiento de su marca en redes.</p>
+      <p>Mi forma de trabajar combina dos miradas: el coaching, para ordenar la cabeza y tomar decisiones, y la estrategia, para convertir esas decisiones en acciones concretas.</p>
+      <p class="quote">"El primer paso no es tener todo claro. Es animarse a mirarlo."</p>
+    </div>
   </div>
 </section>
 
-<section class="block" id="servicios">
+<section class="sec" id="servicios">
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Cómo te puedo acompañar</span>
       <h2>Servicios</h2>
-      <p>Elegí lo que necesitás y consultame. Si no sabés por cuál arrancar, lo charlamos en la primera conversación.</p>
+      <p>Elegí lo que necesitás. Si no sabés por cuál arrancar, lo charlamos en la primera conversación.</p>
     </div>
     <div class="services">
-      <article class="svc"><span class="k">Personas</span><h3>Coaching ontológico</h3><p>Sesiones individuales para destrabar decisiones, ordenar prioridades y avanzar con lo que venís postergando.</p><button type="button" data-svc="Coaching ontológico">Consultar por este servicio</button></article>
-      <article class="svc"><span class="k">Emprendedores</span><h3>Estrategia para Instagram</h3><p>Un plan claro para tu cuenta: a quién le hablás, qué publicar y cómo convertir seguidores en clientes.</p><button type="button" data-svc="Estrategia para Instagram">Consultar por este servicio</button></article>
-      <article class="svc"><span class="k">Marcas</span><h3>Community manager</h3><p>Me ocupo de tus redes: contenido, publicaciones y comunidad, para que vos te enfoques en tu negocio.</p><button type="button" data-svc="Community manager">Consultar por este servicio</button></article>
-      <article class="svc"><span class="k">Empresas</span><h3>Creando líderes</h3><p>Talleres y procesos de coaching para equipos y líderes que quieren comunicarse y trabajar mejor.</p><button type="button" data-svc="Creando líderes (empresas)">Consultar por este servicio</button></article>
+      <article class="svc">
+        <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg></span><span class="k">Personas</span></div>
+        <h3>Coaching ontológico</h3>
+        <p>Sesiones individuales para destrabar decisiones, ordenar prioridades y avanzar con lo que venís postergando.</p>
+        <button type="button" data-svc="Coaching ontológico">Consultar <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      </article>
+      <article class="svc">
+        <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span><span class="k">Emprendedores</span></div>
+        <h3>Estrategia para Instagram</h3>
+        <p>Un plan claro para tu cuenta: a quién le hablás, qué publicar y cómo convertir seguidores en clientes.</p>
+        <button type="button" data-svc="Estrategia para Instagram">Consultar <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      </article>
+      <article class="svc">
+        <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><span class="k">Marcas</span></div>
+        <h3>Community manager</h3>
+        <p>Me ocupo de tus redes: contenido, publicaciones y comunidad, para que vos te enfoques en tu negocio.</p>
+        <button type="button" data-svc="Community manager">Consultar <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      </article>
+      <article class="svc">
+        <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a5.5 5.5 0 0 1 3.5 6"/></svg></span><span class="k">Empresas</span></div>
+        <h3>Creando líderes</h3>
+        <p>Talleres y procesos de coaching para equipos y líderes que quieren comunicarse y trabajar mejor.</p>
+        <button type="button" data-svc="Creando líderes (empresas)">Consultar <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="block" style="padding-top:0">
-  <div class="wrap" style="padding-top:0">
-    <div class="head"><span class="eyebrow">Simple y rápido</span><h2>Cómo agendar</h2></div>
+<section class="sec sec-sand" id="como">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Simple y rápido</span>
+      <h2>Cómo agendar</h2>
+    </div>
     <ol class="steps">
-      <li><b>Completás tus datos</b><span>Elegís el servicio, tu día y horario preferido.</span></li>
-      <li><b>Se abre WhatsApp</b><span>Con el mensaje ya escrito. Solo tenés que enviarlo.</span></li>
-      <li><b>Confirmamos el turno</b><span>Te respondo para coordinar fecha, hora y modalidad.</span></li>
+      <li><div><b>Completás tus datos</b><span>Elegís el servicio, el día y el horario que prefieras.</span></div></li>
+      <li><div><b>Se abre WhatsApp</b><span>Con el mensaje ya escrito. Solo tenés que enviarlo.</span></div></li>
+      <li><div><b>Confirmamos el turno</b><span>Te respondo para coordinar fecha, hora y modalidad.</span></div></li>
     </ol>
   </div>
 </section>
 
-<section class="agenda" id="agenda">
-  <div class="wrap">
-    <div class="intro">
-      <span class="eyebrow" style="color:var(--sage)">Agenda</span>
-      <h2 style="margin-top:10px">Reservá tu consulta</h2>
+<section class="sec" id="agenda">
+  <div class="wrap agenda-grid">
+    <div class="agenda-info">
+      <span class="eyebrow">Agenda</span>
+      <h2 style="font-size:clamp(28px,7vw,42px);margin-top:10px">Reservá tu consulta</h2>
       <p>Completá el formulario y te llega directo a mi WhatsApp. Te respondo para confirmar el horario.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Sin registrarte en ningún lado</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Sesiones online o presenciales</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Respuesta personal por WhatsApp</li>
+      </ul>
     </div>
+
     <form id="f" novalidate>
       <div class="row">
-        <div class="field"><label for="nombre">Tu nombre</label><input id="nombre" autocomplete="name" placeholder="Ej: Carla"></div>
+        <div class="field"><label for="nombre">Tu nombre</label><input type="text" id="nombre" autocomplete="given-name" placeholder="Ej: Carla" enterkeyhint="next"></div>
         <div class="field"><label for="servicio">Servicio</label>
           <select id="servicio">
             <option>Coaching ontológico</option>
@@ -207,49 +327,58 @@ footer a{font-weight:600;color:var(--ink)}
             <option>No sé, quiero que me orientes</option>
           </select></div>
       </div>
+      <div class="field"><label for="dia">Día preferido</label>
+        <select id="dia"><option>Cualquier día</option><option>Lunes</option><option>Martes</option><option>Miércoles</option><option>Jueves</option><option>Viernes</option><option>Sábado</option></select></div>
       <div class="row">
-        <div class="field"><label for="dia">Día preferido</label>
-          <select id="dia"><option>Lunes</option><option>Martes</option><option>Miércoles</option><option>Jueves</option><option>Viernes</option><option>Sábado</option><option>Cualquier día</option></select></div>
-        <fieldset><span class="legend">Horario</span>
-          <div class="chips">
+        <fieldset><legend class="legend">Horario</legend>
+          <div class="seg">
             <input type="radio" name="hora" id="h1" value="Mañana" checked><label for="h1">Mañana</label>
             <input type="radio" name="hora" id="h2" value="Tarde"><label for="h2">Tarde</label>
             <input type="radio" name="hora" id="h3" value="Noche"><label for="h3">Noche</label>
           </div></fieldset>
+        <fieldset><legend class="legend">Modalidad</legend>
+          <div class="seg">
+            <input type="radio" name="modo" id="m1" value="Online" checked><label for="m1">Online</label>
+            <input type="radio" name="modo" id="m2" value="Presencial"><label for="m2">Presencial</label>
+          </div></fieldset>
       </div>
-      <fieldset><span class="legend">Modalidad</span>
-        <div class="chips">
-          <input type="radio" name="modo" id="m1" value="Online" checked><label for="m1">Online</label>
-          <input type="radio" name="modo" id="m2" value="Presencial"><label for="m2">Presencial</label>
-        </div></fieldset>
-      <div class="field"><label for="msg">Contame brevemente qué te gustaría trabajar (opcional)</label><textarea id="msg" placeholder="Ej: quiero ordenar mi emprendimiento y no sé por dónde empezar"></textarea></div>
-      <div class="field"><span class="legend">Así va a llegar tu mensaje</span><div class="preview" id="preview"></div></div>
-      <p class="err" id="err" hidden>Escribí tu nombre para poder enviar la consulta.</p>
+      <div class="field"><label for="msg">¿Qué te gustaría trabajar? <span style="font-weight:400;color:var(--muted)">(opcional)</span></label><textarea id="msg" placeholder="Ej: quiero ordenar mi emprendimiento y no sé por dónde empezar"></textarea></div>
+      <details class="preview"><summary>Ver el mensaje que se va a enviar</summary><pre id="preview"></pre></details>
+      <p class="err" id="err" hidden role="alert">Escribí tu nombre para poder enviar la consulta.</p>
       <a class="btn btn-wa" id="send" href="#" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
         Enviar consulta por WhatsApp
       </a>
+      <p class="note">Se abre WhatsApp con tu mensaje listo para enviar.</p>
     </form>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
     <span>© 2026 Euge Benitez · Coach Ontológico</span>
-    <span>Instagram: <a href="https://www.instagram.com/soyeugebenitez" target="_blank" rel="noopener">@soyeugebenitez</a> · <a href="https://www.instagram.com/eugebenitez.ok" target="_blank" rel="noopener">@eugebenitez.ok</a></span>
+    <div class="socials">
+      <a href="https://www.instagram.com/soyeugebenitez" target="_blank" rel="noopener">@soyeugebenitez</a>
+      <a href="https://www.instagram.com/eugebenitez.ok" target="_blank" rel="noopener">@eugebenitez.ok</a>
+    </div>
   </div>
 </footer>
 
-<a class="float" id="floatwa" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
-</a>
+<div class="mbar" id="mbar">
+  <a class="btn btn-wa" href="#agenda">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+    Agendar consulta
+  </a>
+</div>
 
 <script>
-// Número de WhatsApp de Euge: código de país + área + número, sin espacios ni "+" (ej: 5493815551234)
+// Número de WhatsApp de Euge: código de país + 9 + área + número, sin espacios ni "+" (ej: 5493815551234)
 const WHATSAPP = "5490000000000";
 
 const $ = id => document.getElementById(id);
-const radio = n => (document.querySelector(`input[name="${n}"]:checked`)||{}).value || "";
+const radio = n => (document.querySelector(`input[name="${n}"]:checked`) || {}).value || "";
+
 function texto(){
   const nombre = $("nombre").value.trim() || "[tu nombre]";
   let t = `Hola Euge! Soy ${nombre}. Quiero agendar una consulta.\n` +
@@ -264,19 +393,36 @@ function update(){
   const t = texto();
   $("preview").textContent = t;
   $("send").href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
+  if ($("nombre").value.trim()){ $("err").hidden = true; $("nombre").classList.remove("bad"); }
 }
 $("f").addEventListener("input", update);
 $("f").addEventListener("change", update);
 $("f").addEventListener("submit", e => e.preventDefault());
 $("send").addEventListener("click", e => {
-  if (!$("nombre").value.trim()){ e.preventDefault(); $("err").hidden = false; $("nombre").focus(); }
-  else $("err").hidden = true;
+  if (!$("nombre").value.trim()){
+    e.preventDefault();
+    $("err").hidden = false;
+    $("nombre").classList.add("bad");
+    $("nombre").focus();
+  }
 });
-$("floatwa").href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hola Euge! Quiero consultar por una sesión.")}`;
+
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 document.querySelectorAll("[data-svc]").forEach(b => b.addEventListener("click", () => {
   $("servicio").value = b.dataset.svc; update();
-  $("agenda").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
-  setTimeout(() => $("nombre").focus({preventScroll:true}), 400);
+  $("agenda").scrollIntoView({behavior: reduce ? "auto" : "smooth"});
+  setTimeout(() => $("nombre").focus({preventScroll:true}), reduce ? 0 : 500);
 }));
+
+// borde del menú al scrollear
+const nav = $("nav");
+addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 8), {passive:true});
+
+// esconder la barra fija del celular cuando el formulario está a la vista
+if ("IntersectionObserver" in window){
+  new IntersectionObserver(([e]) => $("mbar").classList.toggle("hide", e.isIntersecting), {threshold:.15}).observe($("agenda"));
+}
 update();
 </script>
+</body>
+</html>
